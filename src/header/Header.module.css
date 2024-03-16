@@ -1,0 +1,49 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    border-bottom: 1px solid;
+    border-color: rgb(105, 124, 140);
+  }
+  
+  .card {
+    margin: 4px;
+    border: 1px solid;
+    border-color: #5e637a;
+    border-radius: 10px;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 32vh;
+    background-color: #5e637a;;
+    color: #272a36;
+    /* height: 8vh; */
+    
+  }
+  .card:hover{
+    background-color: #272a36;
+    color: #5e637a;;
+  }
+  
+  .card p {
+    margin: 0;
+    text-align: left;
+  }
+
+  .live {
+    height: 18px;
+    vertical-align: top
+  }
+
+  .ima {
+   width: 20px;
+   max-height: 18px;
+   vertical-align: top;
+   }
+
+   .partidoBarra{
+    text-decoration: none;
+    color: rgb(84, 186, 226);
+   }
+
+ 
