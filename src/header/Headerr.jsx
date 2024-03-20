@@ -19,10 +19,10 @@ const Encabezado = () => {
         <Link key={partido.id} className={styles.partidoBarra}>
           <div className={styles.card}>
             <p>
-              {partido.equipo_local} {partido.res_local}
+              {partido.equipos_locales.nom_equipo_local} {partido.res_local}
             </p>
             <p>
-              {partido.equipo_visita} {partido.res_visita}
+              {partido.equipos_visitantes.nom_equipo_visitante} {partido.res_visita}
             </p>
           </div>
         </Link>
