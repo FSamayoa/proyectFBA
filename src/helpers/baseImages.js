@@ -162,4 +162,75 @@ export const BDImages = [
         id:33
       },
       //! LFA /////////////////////////////////////////
+
+      {
+        equipo:"Caudillos",
+        imagen:"https://i.imgur.com/xBo592j.png",
+        id:34
+      },
+      {
+        equipo:"Dinos",
+        imagen:"https://i.imgur.com/Q3k225a.png",
+        id:35
+      },
+      {
+        equipo:"Fundidores",
+        imagen:"https://i.imgur.com/pdLuKJ7.png",
+        id:36
+      },
+      {
+        equipo:"Galgos",
+        imagen:"https://i.imgur.com/LNgllOB.png",
+        id:37
+      },
+      {
+        equipo:"Gallos Negros",
+        imagen:"https://i.imgur.com/yY2d7zh.png",
+        id:38
+      },
+      {
+        equipo:"Jefes",
+        imagen:"https://i.imgur.com/Pd7Lokh.png",
+        id:39
+      },
+      {
+        equipo:"Mexicas",
+        imagen:"https://i.imgur.com/hwxP9QB.png",
+        id:40
+      },
+      {
+        equipo:"Raptors",
+        imagen:"https://i.imgur.com/B7OLfpC.png",
+        id:41
+      },
+      {
+        equipo:"Reyes",
+        imagen:"https://i.imgur.com/MGmt21Q.png",
+        id:42
+      },
+      {
+        equipo:"Reds",
+        imagen:"https://i.imgur.com/q3KlQIy.png",
+        id:43
+      },
+
+
+      //! INTERMEDIA /////////////////////////////////////////
+      {
+        equipo:"Cheyennes",
+        imagen:"https://i.imgur.com/WfRvokF.png",
+        id:44
+      },
+      {
+        equipo:"Buhos",
+        imagen:"https://i.imgur.com/RLOYIyt.png",
+        id:45
+      },
+      {
+        equipo:"Mexicah",
+        imagen:"https://i.imgur.com/Bcnadn7.png",
+        id:46
+      }
+
+
 ]

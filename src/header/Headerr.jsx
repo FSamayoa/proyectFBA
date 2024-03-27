@@ -1,9 +1,13 @@
+// Encabezado.jsx
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../header/Header.module.css";
+import { BDImages } from "../helpers/baseImages";
 
 const Encabezado = () => {
   const [partidos, setPartidos] = useState([]);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     // Realizar la solicitud a la API al montar el componente
@@ -13,57 +17,77 @@ const Encabezado = () => {
       .catch((error) => console.error("Error al obtener partidos:", error));
   }, []);
 
+  const handleScroll = (direction) => {
+    const container = document.getElementById("encabezadoContainer");
+    if (container) {
+      const newPosition = scrollPosition + (direction === "right" ? 300 : -300);
+      container.scrollLeft = newPosition;
+      setScrollPosition(newPosition);
+    }
+  };
+
+  // Función para obtener la URL de la imagen correspondiente al nombre del equipo
+  const obtenerImagen = (nombreEquipo) => {
+    const equipo = BDImages.find((equipo) => equipo.equipo === nombreEquipo);
+    return equipo ? equipo.imagen : null;
+  };
+
   return (
-    <div className={styles.row}>
+    <div>
+    <div className={styles.buttonContainer}>
+    <button className={`${styles.navButton} ${styles.leftButton}`} onClick={() => handleScroll("left")}>
+      {"<"}
+    </button>
+    <button className={`${styles.navButton} ${styles.rightButton}`} onClick={() => handleScroll("right")}>
+      {">"}
+    </button>
+  </div>
+    <div className={styles.encabezadoContainer} id="encabezadoContainer">
       {partidos.map((partido) => (
         <Link key={partido.id} className={styles.partidoBarra}>
           <div className={styles.card}>
-            <p>
-              {partido.equipos_locales.nom_equipo_local} {partido.res_local}
-            </p>
-            <p>
-              {partido.equipos_visitantes.nom_equipo_visitante} {partido.res_visita}
-            </p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src={obtenerImagen(partido.list_locales?.nom_local)} alt={partido.list_locales?.nom_local} />
+                  </td>
+                  <td>
+                    {partido.list_locales?.nom_local}
+                  </td>
+                  <td>
+                    {partido.res_local}
+                  </td>
+                  <td>
+                    {partido.live}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src={obtenerImagen(partido.list_visita?.nom_visita)} alt={partido.list_visita?.nom_visita} />
+                  </td>
+                  <td>
+                    {partido.list_visita?.nom_visita}
+                  </td>
+                  <td>
+                    {partido.res_visita}
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan="3" className={styles.detalle}>
+                    {partido.fecha} {partido.hora}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </Link>
       ))}
+   
+    </div>
+      <hr className={styles.hr}></hr>
     </div>
   );
 };
 
 export default Encabezado;
-
-
-// import { BDPartidos } from "./partidos";
-// import { BDImages } from "../helpers/baseImages";
-// import {Link, useLocation} from 'react-router-dom'
-// import styles from "../header/Header.module.css"
-
-
-// const findImageURL = (teamName) => {
-//   const team = BDImages.find((item) => item.equipo === teamName);
-//   return team ? team.imagen : ''; 
-// };
-
-// const Encabezado = () => {
-
-//   return (
-//     <div className={styles.row}>
-//       {BDPartidos.map((partido) => (
-//         <Link className={styles.partidoBarra}>
-//           <div key={partido.P} className={styles.card}>
-//             <p>
-//             <img className={styles.ima} src={findImageURL(partido.local)} alt={partido.local} />  <span style={{ marginRight: '10px',display: 'inline-block', width:'133px'}}>{partido.local}</span><span style={{ verticalAlign: 'top'}}>{partido.ResLocal}</span> {partido.live ? <img className={styles.live} src="https://i.imgur.com/eT5tuUt.gif" alt="Live" /> : ""}
-//             </p>
-//             <p>
-//             <img className={styles.ima} src={findImageURL(partido.visita)} alt={partido.visita} />  <span style={{marginRight: '10px',display: 'inline-block', width:'133px' }}>{partido.visita}</span><span style={{verticalAlign: 'top' }}>{partido.ResVisita}</span> 
-//             </p>
-//             <p></p>
-//           </div>
-//           </Link>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Encabezado;

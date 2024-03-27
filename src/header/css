@@ -1,0 +1,182 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    border-bottom: 1px solid;
+    border-color: rgb(105, 124, 140);
+  }
+  
+  .card {
+    margin: 4px;
+    border: 1px solid;
+    border-color: #5e637a;
+    border-radius: 10px;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 32vh;
+    background-color: #5e637a;;
+    color: #272a36;
+    /* height: 8vh; */
+    
+  }
+  .card:hover{
+    background-color: #272a36;
+    color: #5e637a;;
+  }
+
+  .card > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card > div:not(:last-child) {
+    margin-bottom: 5px; /* Agrega espacio entre cada fila */
+  }
+  
+  .card p {
+    margin: 0;
+    padding-left: 5px; /* Añade un pequeño espacio entre la imagen y el texto */
+  }
+
+  .card img {
+    max-width: 20px; /* Establece el ancho máximo de las imágenes */
+    max-height: 20px; /* Establece la altura máxima de las imágenes */
+    margin-right: 5px; /* Añade un pequeño espacio entre la imagen y el texto */
+  }
+  
+
+  .live {
+    height: 18px;
+    vertical-align: top
+  }
+
+  .ima {
+   width: 20px;
+   max-height: 18px;
+   vertical-align: top;
+   }
+
+   .partidoBarra{
+    text-decoration: none;
+    color: rgb(84, 186, 226);
+   }
+
+   .navButton {
+    background-color: transparent;
+    border: none;
+    color: #5e637a;
+    cursor: pointer;
+    font-size: 1.5rem;
+    outline: none;
+    padding: 0.5rem;
+  }
+  
+  .navButton:disabled {
+    color: #ccc;
+    cursor: default;
+  }
+
+  .encabezadoContainer {
+    display: flex;
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    scroll-behavior: smooth;
+    position: relative;
+    max-width: 90vw; /* Establece un ancho máximo igual al ancho de la ventana */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+
+  .navButton {
+    background-color: #5e637a;; /* Semitransparente */
+    border: none;
+    color: #dadbe1;
+    cursor: pointer;
+    font-size: 1.5rem;
+    outline: none;
+    padding: .7rem;
+    z-index: 1; /* Asegura que estén por encima del contenido */
+    position: fixed;
+    top: 5%;
+    transform: translateY(-50%);
+  }
+
+  .leftButton {
+    left: 0;
+  }
+  
+  .rightButton {
+    right: 0;
+  }
+
+  .detalle {
+    font-size: .8rem;
+  }
+
+
+
+
+
+  import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import styles from "../header/Header.module.css";
+import { BDImages } from "../helpers/baseImages";
+
+const Encabezado = () => {
+  const [partidos, setPartidos] = useState([]);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    // Realizar la solicitud a la API al montar el componente
+    fetch("https://proyect-fba.vercel.app/api/")
+      .then((response) => response.json())
+      .then((data) => setPartidos(data))
+      .catch((error) => console.error("Error al obtener partidos:", error));
+  }, []);
+
+  const handleScroll = (direction) => {
+    const container = document.getElementById("encabezadoContainer");
+    if (container) {
+      const newPosition = scrollPosition + (direction === "right" ? 300 : -300);
+      container.scrollLeft = newPosition;
+      setScrollPosition(newPosition);
+    }
+  };
+
+    // Función para obtener la URL de la imagen correspondiente al nombre del equipo
+    const obtenerImagen = (nombreEquipo) => {
+      const equipo = BDImages.find((equipo) => equipo.equipo === nombreEquipo);
+      return equipo ? equipo.imagen : null;
+    };
+
+  return (
+    <div className={styles.encabezadoContainer} id="encabezadoContainer">
+      {partidos.map((partido) => (
+        <Link key={partido.id} className={styles.partidoBarra}>
+          <div className={styles.card}>
+            <div>
+              <img src={obtenerImagen(partido.list_locales?.nom_local)} alt={partido.list_locales?.nom_local} />
+              <p>{partido.list_locales?.nom_local}</p>
+              <p>{partido.res_local}</p>
+            </div>
+            <div>
+              <img src={obtenerImagen(partido.list_visita?.nom_visita)} alt={partido.list_visita?.nom_visita} />
+              <p>{partido.list_visita?.nom_visita}</p>
+              <p>{partido.res_visita}</p>
+            </div>
+            <div>
+              <p className={styles.detalle}>{partido.fecha} {partido.hora}</p>
+            </div>
+          </div>
+        </Link>
+      ))}
+      <button className={`${styles.navButton} ${styles.leftButton}`} onClick={() => handleScroll("left")}>
+        {"<"}
+      </button>
+      <button className={`${styles.navButton} ${styles.rightButton}`} onClick={() => handleScroll("right")}>
+        {">"}
+      </button>
+    </div>
+  );
+};
+
+export default Encabezado;
