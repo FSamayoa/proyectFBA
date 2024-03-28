@@ -57,7 +57,7 @@ export const BDImages = [
     },
     {
       equipo:"Pumas Acatlan",
-      imagen:"https://i.imgur.com/ZoYwp8Q.png",
+      imagen:"https://i.imgur.com/AztAc8P.png",
       id:12
     },
     {

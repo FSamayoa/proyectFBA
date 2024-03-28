@@ -11,7 +11,7 @@
   max-width: 32vh; /* Máximo ancho de la tarjeta */
   background-color: #5e637a;
   color: #272a36;
-  height: 80px;
+  height: 90px;
   width: 300px;
 }
 
@@ -42,7 +42,9 @@
 .card table td {
 
   text-align: left; /* Alineación del texto */
+
 }
+
 
 .card img {
   max-width: 20px; /* Establece el ancho máximo de las imágenes */
@@ -123,3 +125,25 @@
 .hr {
   max-width: 98vw; /* Establece un ancho máximo igual al ancho de la ventana */
 }
+
+.card table td:nth-child(1) {
+  width: 10%; /* Ancho para la primera columna */
+}
+
+.card table td:nth-child(2) {
+  width: 60%; /* Ancho para la segunda columna */
+}
+
+.card table td:nth-child(3) {
+  width: 15%; /* Ancho para la tercera columna */
+}
+
+.card table td:nth-child(4) {
+  width: 15%; /* Ancho para la cuarta columna */
+}
+
+.detalles{
+  font-size: 0.7rem
+}
+
+
