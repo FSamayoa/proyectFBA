@@ -5,13 +5,13 @@ const Nav = () => {
     const location = useLocation();
   return (
     <div>
-        <div className={styles.logoContainer}>
+        {/* <div className={styles.logoContainer}>
         <Link to="/LigaMayorOnefa" className={`${styles.navigation} ${location.pathname === '/LigaMayorOnefa' ? styles.selected : ''}`}>Liga Mayor Onefa</Link>
         <Link to="/IntermediaOnefa" className={`${styles.navigation} ${location.pathname === '/IntermediaOnefa' ? styles.selected : ''}`}>Intermedia Onefa</Link>
         <Link to="/lfa" className={`${styles.navigation} ${location.pathname === '/lfa' ? styles.selected : ''}`}>LFA</Link>
         <Link to="/ifa" className={`${styles.navigation} ${location.pathname === '/ifa' ? styles.selected : ''}`}>IFA</Link>
         <Link to="/nfl" className={`${styles.navigation} ${location.pathname === '/nfl' ? styles.selected : ''}`}>NFL</Link>
-        </div>
+        </div> */}
 
     <div className={styles.navContainer}>
     <div className={styles.linksContainer}>
@@ -29,6 +29,7 @@ const Nav = () => {
         <Link to="/historia" className={`${styles.navigation} ${location.pathname === '/historia' ? styles.selected : ''}`}>Historia</Link>
         <Link to="/tienda" className={`${styles.navigation} ${location.pathname === '/tienda' ? styles.selected : ''}`}>Tienda</Link>
         <Link to="/aprende" className={`${styles.navigation} ${location.pathname === '/aprende' ? styles.selected : ''}`}>Aprende de FBA</Link>
+        <Link to="/aprende" className={`${styles.navigation} ${location.pathname === '/aprende' ? styles.selected : ''}`}>Iniciar sesion</Link>
      
     </div>
     </div>

@@ -1,0 +1,98 @@
+/* calendar.module.css */
+
+/* Estilos generales para ambas tablas */
+.tableCalendar {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #272a36;
+  }
+  
+  /* Establecer bordes redondeados a ambas tablas */
+  .tableContainer {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Estilos para la tabla de títulos */
+  .titleTable {
+    border-spacing: 0; /* Eliminar espacios entre las celdas */
+  }
+  
+  .titleTable th {
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Estilos para la tabla de datos */
+  .dataTable {
+    border-spacing: 0; /* Eliminar espacios entre las celdas */
+  }
+  
+  .rowCalendar {
+    background-color: #272a36;
+  }
+  
+  .rowCalendar:nth-child(even) {
+    background-color: #1f222e;
+  }
+  
+  .tableCalendar th,
+  .tableCalendar td {
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Establece el ancho de cada columna */
+  .tableCalendar th:nth-child(1),
+  .tableCalendar td:nth-child(1) {
+    width: 20%;
+  }
+  
+  .tableCalendar th:nth-child(2),
+  .tableCalendar td:nth-child(2) {
+    width: 20%;
+  }
+  
+  .tableCalendar th:nth-child(3),
+  .tableCalendar td:nth-child(3) {
+    width: 5%;
+  }
+  
+  .tableCalendar th:nth-child(4),
+  .tableCalendar td:nth-child(4) {
+    width: 2%;
+  }
+  
+  .tableCalendar th:nth-child(5),
+  .tableCalendar td:nth-child(5) {
+    width: 5%;
+  }
+  
+  .tableCalendar th:nth-child(6),
+  .tableCalendar td:nth-child(6) {
+    width: 20%;
+  }
+  
+  .tableCalendar th:nth-child(7),
+  .tableCalendar td:nth-child(7) {
+    width: 20%;
+  }
+  
+  .tableCalendar th:nth-child(8),
+  .tableCalendar td:nth-child(8) {
+    width: 16%;
+  }
+  
+  .titleTable {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #272a36;
+    border-radius: 10px;
+    margin-bottom: 20px; 
+  }
+  
+

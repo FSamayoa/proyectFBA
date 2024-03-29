@@ -1,7 +1,7 @@
 
 .navigation{
     border-radius: 10px;
-    border: 1px solid #06ff0a;
+    border: 1px solid #ced9ce;
     font-size: 15px;
     transition: transform 0.2s ease-in-out;
     font-family: 'Audiowide', cursive;
@@ -14,7 +14,7 @@
   
   .selected {
     /* transform: scale(1.1); */
-    border: 3px solid #06ff0a;
+    border: 3px solid #4a8522
   }
 
   .linksContainer {
@@ -26,8 +26,8 @@
   }
 
   .logoContainer {
-    max-height: 5vh;
-    padding: 15px;
+    max-height: 6vh;
+    padding: 1px;
     display: flex;
     justify-content: flex-start;
 }
@@ -49,38 +49,5 @@
 
     
   }
-/* 
-  .title{
-    transition: transform 0.2s ease-in-out;
-    text-decoration: none;
-    font-size: 8vh;
-    padding: 5px; 
-    -webkit-text-stroke: 2px #06d1ff; 
-    -webkit-text-fill-color: transparent;
-    padding: 5px;
-    display: inline-block;
- 
-  }
 
-  .title:hover {
-    transform: scale(1.009);
 
-  }
-
-  .title:active {
-    -webkit-text-fill-color: #06fff3;
-  }
-  */
-
- 
-
-/* 
- 
-
-  
-  /* .title-container {
-    text-align: center;
-    margin-right: 10vh;
-  } */
-  
-  
