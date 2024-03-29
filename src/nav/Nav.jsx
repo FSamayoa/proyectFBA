@@ -6,7 +6,6 @@ const Nav = () => {
   return (
     <div>
         <div className={styles.logoContainer}>
-        <Link to="/home" ><img className={styles.image} src="https://i.imgur.com/e3YODr9.png"></img></Link>
         <Link to="/LigaMayorOnefa" className={`${styles.navigation} ${location.pathname === '/LigaMayorOnefa' ? styles.selected : ''}`}>Liga Mayor Onefa</Link>
         <Link to="/IntermediaOnefa" className={`${styles.navigation} ${location.pathname === '/IntermediaOnefa' ? styles.selected : ''}`}>Intermedia Onefa</Link>
         <Link to="/lfa" className={`${styles.navigation} ${location.pathname === '/lfa' ? styles.selected : ''}`}>LFA</Link>
@@ -16,6 +15,9 @@ const Nav = () => {
 
     <div className={styles.navContainer}>
     <div className={styles.linksContainer}>
+    <div className={styles.logoContainer}>
+        <Link to="/home" ><img className={styles.image} src="https://i.imgur.com/e3YODr9.png"></img></Link>
+        </div>
         <Link to="/resultados" className={`${styles.navigation} ${location.pathname === '/resultados' ? styles.selected : ''}`}>Resultados</Link>
         <Link to="/calendario" className={`${styles.navigation} ${location.pathname === '/calendario' ? styles.selected : ''}`}>Calendario</Link>
         <Link to="/posiciones" className={`${styles.navigation} ${location.pathname === '/posiciones' ? styles.selected : ''}`}>Posiciones</Link>
