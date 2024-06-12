@@ -3,7 +3,7 @@
 .card {
   margin: 4px;
   border: 1px solid;
-  border-color: #5e637a;
+  border-color: #a0a1a4;
   border-radius: 10px;
   padding: 5px;
   padding-top: 5px;
@@ -89,6 +89,9 @@
 .navButton:hover{
   background-color: #272a36;
   color: #5e637a;
+  border: 1px solid;
+  border-color: #4a8522;
+  border-radius: 10px;
 }
 
 .leftButton {
@@ -110,6 +113,7 @@
 .card:hover table tr td { /* Agregar más niveles de especificidad */
   background-color: #272a36;
   color: #5e637a;
+  
 }
 
 .buttonContainer {

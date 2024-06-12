@@ -17,15 +17,15 @@ function App() {
         <Encabezado/>
         <Nav/>
         <Routes>
-        <Route path="/resultados" element={<Resultados />} />
+        {/* <Route path="/resultados" element={<Resultados />} /> */}
         <Route path="/calendario" element={<Calendario />} />
         <Route path="/posiciones" element={<Posiciones />} />
         <Route path="/estadisticas" element={<Estadisticas />} />
         <Route path="/equipos" element={<Equipos />} />
         <Route path="/videos" element={<Multimedia />} />
-        <Route path="/comunidad" element={<Resultados />} />
+        {/* <Route path="/comunidad" element={<Resultados />} /> */}
         <Route path="/contacto" element={<Contacto />} />
-        <Route path="/historia" element={<Resultados />} />
+        {/* <Route path="/historia" element={<Resultados />} /> */}
         <Route path="/tienda" element={<Resultados />} />
         <Route path="/aprende" element={<Resultados />} />
         

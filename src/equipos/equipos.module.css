@@ -1,0 +1,12 @@
+.titulo{
+    background-color: yellow;
+    color: black;
+    position: relative;
+    top: 150px;
+}
+
+.ima{
+    height: 500px;
+    top: 5px;
+    left: auto;
+}

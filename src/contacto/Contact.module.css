@@ -1,0 +1,45 @@
+
+.contenedor {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formControl {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff00;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+  }
+  
+  .formLabel {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .errorMessage {
+    color: red;
+    font-size: 0.875em;
+  }
+  
+  .boton {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a8522;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .boton:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
