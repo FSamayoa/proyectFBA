@@ -5,7 +5,7 @@
   const Calendario = () => {
     const urlApi = "https://proyect-fba.vercel.app/api/";
 
-    const [partidos,setPartidos] = useState ([]);
+    const [partidos,setPartidos] = useState (null);
 
     async function consulta (){
       try{
@@ -29,7 +29,15 @@
     return (
       <div>
       <h1>hey</h1>
-      <span>{partidos}</span>
+      {partidos ? (
+        <ul>
+          {partidos.map((partido,index) => (
+            <li key={index}><span>{partido.semana}{partido.list_locales?.nom_local}</span></li>
+          ))  
+          }
+        </ul>
+      ):
+      (<span>Cargando . . .</span>)}
       </div>
     )
   };

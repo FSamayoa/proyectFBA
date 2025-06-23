@@ -29,7 +29,7 @@ const Nav = () => {
         {/* <Link to="/historia" className={`${styles.navigation} ${location.pathname === '/historia' ? styles.selected : ''}`}><span>Historia</span></Link> */}
         {/* <Link to="/tienda" className={`${styles.navigation} ${location.pathname === '/tienda' ? styles.selected : ''}`}><span>Tienda</span></Link> */}
         {/* <Link to="/aprende" className={`${styles.navigation} ${location.pathname === '/aprende' ? styles.selected : ''}`}><span>Aprende de FBA</span></Link> */}
-        <Link to="/aprende" className={`${styles.navigation} ${location.pathname === '/aprende' ? styles.selected : ''}`}><span>Iniciar sesion</span></Link>
+        <Link to="/aprende" className={`${styles.navigation} ${location.pathname === '/aprende' ? styles.selected : ''}`}><span>Iniciar sesioni</span></Link>
      
     </div>
     </div>
